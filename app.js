@@ -12,8 +12,8 @@ app.get('/', (req, res)=>{
 app.get('/api/datos', (req, res)=>{
     //res.json(datos)
     const simpleData = datos.map((dato)=>{
-        const{id, name, apellidos, dni, edad} = dato
-        return{id, name, apellidos, dni, edad}
+        const{id, name, apellido, dni, edad} = dato
+        return{id, name, apellido, dni, edad}
     })
     res.send(simpleData)
 })
@@ -37,7 +37,7 @@ app.put('/api/datos/:id', (req,res) => {
     }
     const newdato = datos.map(data => {
         if (data.id ===  Number(id)) {
-            data.name =name
+            data.name = name
         }
         return data
         })
